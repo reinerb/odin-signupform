@@ -87,3 +87,73 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
+@font-face {
+  font-family: "Norse Bold";
+  src: url(fonts/Norse-Bold.otf);
+}
+
+:root {
+  --font-size: 16px;
+  --link-color: #e96f01;
+  --main-bg-color: #eeeeee;
+}
+
+html {
+  font-size: var(--font-size);
+  font-family: sans-serif;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Norse Bold";
+  font-size: 6rem;
+  color: white;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+}
+
+header {
+  background-image: url(images/marek-piwnicki-edQ4Ka5R3DQ-unsplash.jpg);
+  background-size: cover;
+  flex: 1;
+  position: relative;
+}
+
+.logo {
+  --padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  padding: var(--padding);
+  width: calc(100% - calc(2 * var(--padding)));
+  top: 25%;
+}
+
+.image-credit {
+  color: #ffffff;
+  width: 100%;
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.logo > img {
+  max-height: 8rem;
+}
+
+main {
+  background: var(--main-bg-color);
+  flex: 2;
+}
