@@ -88,6 +88,13 @@ video {
   vertical-align: baseline;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Styling starts here */
 @font-face {
   font-family: "Norse Bold";
   src: url(fonts/Norse-Bold.otf);
@@ -102,6 +109,7 @@ video {
 html {
   font-size: var(--font-size);
   font-family: sans-serif;
+  line-height: 1.5;
 }
 
 a {
@@ -123,6 +131,7 @@ body {
 header {
   background-image: url(images/marek-piwnicki-edQ4Ka5R3DQ-unsplash.jpg);
   background-size: cover;
+  background-position: 50% 50%;
   flex: 1;
   position: relative;
 }
@@ -156,4 +165,98 @@ header {
 main {
   background: var(--main-bg-color);
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+main > * {
+  margin: 1.5rem;
+  max-width: 1280px;
+}
+
+main p {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.hero > p:first-child {
+  margin-bottom: 1em;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 1em;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  box-shadow: 0 0.125em 0.25em #aaa;
+}
+
+form > p {
+  grid-column: 1 / span 2;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25em;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5ch;
+}
+
+input {
+  width: 100%;
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 0.25em;
+  font-size: var(--font-size);
+  font-family: inherit;
+  padding: 0.4em 0.8em;
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+.error ~ p {
+  font-size: 0.8rem;
+  color: red;
+}
+
+input:focus {
+  border: 2px solid rgb(31, 21, 170);
+  box-shadow: 0.25em 0.25em 0.5em #aaa;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--link-color);
+  border: 3px solid var(--link-color);
+  font-size: var(--font-size);
+  font-weight: 600;
+  color: #fff;
+  padding: 1em 3em;
+  border-radius: 0.5rem;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+button:active {
+  background-color: transparent;
+  color: var(--link-color);
+}
+
+main > p:last-of-type {
+  font-size: 1.25rem;
 }
